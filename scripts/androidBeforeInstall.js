@@ -12,6 +12,7 @@ module.exports = function (ctx) {
     if (fs.existsSync(projectProguardFile)) {
       const data = fs.readFileSync(projectProguardFile, 'utf8');
       fs.appendFileSync(targetProguardFile, data);
+      console.log("DIRMC_",projectRoot, pluginDir);
       console.log('Added optional proguard-rules to proguardFile.');
     } else {
       console.log('No optional proguard-custom.txt found in projectRoot: ' + projectRoot);
